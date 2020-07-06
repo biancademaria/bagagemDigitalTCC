@@ -1,0 +1,48 @@
+ion-content {
+    --ion-background-color: linear-gradient(#9796f0, #fbc7d4);
+}
+
+ion-item {
+    --ion-background-color: transparent!important;
+}
+
+ion-label {
+    text-align: center;
+}
+
+.padding {
+    padding: 5%;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sem-conta {
+    text-align: center;
+    font-size: 12px;
+}
+
+.logo {
+    height: 150px;
+    position: relative;
+
+    & ion-icon {
+        position: absolute;
+        font-size: 8em;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.ion-button-class {
+    font-weight: bold;
+}
+
+.a {
+    font-size: 12px; 
+    text-decoration: none; 
+    color: white;
+}

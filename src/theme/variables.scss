@@ -3,6 +3,22 @@
 
 /** Ionic CSS Variables **/
 :root {
+/** facebook **/
+--ion-color-facebook: #a67fe1;
+--ion-color-facebook-rgb: 166,127,225;
+--ion-color-facebook-contrast: #000000;
+--ion-color-facebook-contrast-rgb: 0,0,0;
+--ion-color-facebook-shade: #9270c6;
+--ion-color-facebook-tint: #af8ce4;
+
+/** google **/
+--ion-color-google: #e17f7f;
+--ion-color-google-rgb: 225,127,127;
+--ion-color-google-contrast: #000000;
+--ion-color-google-contrast-rgb: 0,0,0;
+--ion-color-google-shade: #c67070;
+--ion-color-google-tint: #e48c8c;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -75,6 +91,28 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+
+.ion-color-facebook {
+  --ion-color-base: var(--ion-color-facebook);
+  --ion-color-base-rgb: var(--ion-color-facebook-rgb);
+  --ion-color-contrast: var(--ion-color-facebook-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb);
+  --ion-color-shade: var(--ion-color-facebook-shade);
+  --ion-color-tint: var(--ion-color-facebook-tint);
+}
+
+.ion-color-google {
+  --ion-color-base: var(--ion-color-google);
+  --ion-color-base-rgb: var(--ion-color-google-rgb);
+  --ion-color-contrast: var(--ion-color-google-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-google-contrast-rgb);
+  --ion-color-shade: var(--ion-color-google-shade);
+  --ion-color-tint: var(--ion-color-google-tint);
+}
+
+
+
 
 @media (prefers-color-scheme: dark) {
   /*

@@ -1,0 +1,59 @@
+<ion-content>
+
+  <div class="padding">
+
+    <div class="logo">
+      <ion-icon color="light" name="person-circle"></ion-icon>
+      <!-- <img src="../../assets/logo.png"> -->
+    </div>
+
+    <ion-item margin-top="20px">
+      <ion-icon name="paper-plane" color="light"></ion-icon>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="Nome de usuário" type="username"  [(ngModel)]="userCadastro.username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="person" color="light"></ion-icon>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="Nome completo" type="name" [(ngModel)]="userCadastro.name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="mail" color="light"></ion-icon>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="Adicione seu E-mail" type="email" [(ngModel)]="userCadastro.email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name="key" color="light"></ion-icon>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="Adicione sua senha" type="password" [(ngModel)]="userCadastro.password"></ion-input>
+    </ion-item>
+
+    <ion-button color="light" class="ion-button-class" shape="round" fill="outline" size="medium" expand="block" (click)="cadastro()">CADASTRAR</ion-button>
+
+    <ion-col>
+      <a routerLink="/login" class="a">VOLTAR PARA LOGIN</a>
+    </ion-col>
+
+    <ion-item lines="none">
+      <ion-label color="light">Ou registre-se com</ion-label>
+    </ion-item>
+
+    <div class="flex">
+
+      <ion-button size="small" shape="round" color="facebook">
+        <ion-icon slot="start" name="logo-facebook"></ion-icon>
+        Facebook
+      </ion-button>
+
+      <ion-button size="small" shape="round" color="google">
+        <ion-icon slot="start" name="logo-google"></ion-icon>
+        Google
+      </ion-button>
+
+
+    </div>
+  </div>
+</ion-content>
