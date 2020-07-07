@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { User } from '../interfaces/user';
-import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
@@ -12,20 +10,24 @@ export class AuthService {
     private angularFireAuth: AngularFireAuth
   ) { }
 
-  login(usuario: User) {
-    return firebase.auth().signInWithEmailAndPassword(usuario.email, usuario.password);
-  }
+    login (email: any, password: any) {
 
-  cadastro(usuario: User) {
-    return firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password);
-  }
+      return new Promise((resolve, rejected) => {
+        this.angularFireAuth.signInWithEmailAndPassword(email, password).then(user => {
+          resolve(user)
+        }).catch(err => rejected(err));
+      });
 
-  logout() {
+    }
 
-  }
+    cadastro (username: string, name: string, email: any, password: any) {
 
-  getAuth() {
-    return this.angularFireAuth;
-  }
+      return new Promise((resolve, rejected) => {
+        this.angularFireAuth.createUserWithEmailAndPassword(email, password).then(user => {
+          resolve(user)
+        }).catch(err => rejected(err));
+      });
+
+    }
 
 }

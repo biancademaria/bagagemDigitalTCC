@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/interfaces/user';
-import { LoadingController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -10,39 +8,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  public userLogin: User = {};
-  private loading: any;
+  email: any;
+  password: any;
   
 
   constructor(
-    private loadingController: LoadingController,
-    private toastController: ToastController,
     private authService: AuthService,
+    public router: Router
+
   ) { }
 
   ngOnInit() { }
 
-  async login() {
-    await this.presentLoading();
-
-    try {
-      await this.authService.cadastro(this.userLogin);
-    }
-    catch (error) {
-      this.presentToast(error.message)
-    } finally {
-      this.loading.dismiss();
-    }
-
+  fazerLogin() {
+    this.authService.login(this.email, this.password).then(res => {
+      this.router.navigate(['/home']);
+    }).catch(err => alert('Os dados estão incorretos ou este usuário não existe.'));
   }
 
-  async presentLoading() {
-    this.loading = await this.loadingController.create({ message: 'Por favor, aguarde um momento' });
-    return this.loading.present();
-  }
-
-  async presentToast(message: string) {
-    const toast = await this.toastController.create({ message, duration: 2000 });
-    toast.present();
-  }
 }
