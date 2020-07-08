@@ -10,7 +10,7 @@
     <ion-item margin-top="20px">
       <ion-icon name="paper-plane" color="light"></ion-icon>
       <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Nome de usuário" type="username"  [(ngModel)]="username"></ion-input>
+      <ion-input color="light" placeholder="Nome de usuário" type="username" [(ngModel)]="username"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -30,8 +30,9 @@
       <ion-label color="light"></ion-label>
       <ion-input color="light" placeholder="Adicione sua senha" type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-
-    <ion-button color="light" class="ion-button-class" shape="round" fill="outline" size="medium" expand="block" (click)="fazerCadastro()">CADASTRAR</ion-button>
+    <br>
+    <ion-button color="light" class="ion-button-class" shape="round" fill="outline" size="medium" expand="block"
+      (click)="fazerCadastro()">CADASTRAR</ion-button>
 
     <ion-col>
       <a routerLink="/login" class="a">VOLTAR PARA LOGIN</a>
