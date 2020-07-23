@@ -24,7 +24,7 @@ export class CadastroPage implements OnInit {
 
     fazerCadastro() {
         this.authService.cadastro(this.username, this.name, this.email, this.password).then(res => {
-            this.router.navigate(['/home']);
+            this.router.navigate(['/pagina-inicial']);
           }).catch(err => alert('Verifique suas informções e tente novamente. Senhas devem ter mais do que seis caracteres.'));
     }
 

@@ -11,6 +11,22 @@
 --ion-color-facebook-shade: #9270c6;
 --ion-color-facebook-tint: #af8ce4;
 
+/** sky **/
+--ion-color-sky: #12c2e9;
+--ion-color-sky-rgb: 18,194,233;
+--ion-color-sky-contrast: #000000;
+--ion-color-sky-contrast-rgb: 0,0,0;
+--ion-color-sky-shade: #10abcd;
+--ion-color-sky-tint: #2ac8eb;
+
+/** pinky **/
+--ion-color-pinky: #fc67fa;
+--ion-color-pinky-rgb: 252,103,250;
+--ion-color-pinky-contrast: #000000;
+--ion-color-pinky-contrast-rgb: 0,0,0;
+--ion-color-pinky-shade: #de5bdc;
+--ion-color-pinky-tint: #fc76fb;
+
 /** novofacebook **/
 --ion-color-novofacebook: #6A82FB;
 --ion-color-novofacebook-rgb: 106,130,251;
@@ -145,8 +161,23 @@
   --ion-color-tint: var(--ion-color-google-tint);
 }
 
+.ion-color-sky {
+  --ion-color-base: var(--ion-color-sky);
+  --ion-color-base-rgb: var(--ion-color-sky-rgb);
+  --ion-color-contrast: var(--ion-color-sky-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-sky-contrast-rgb);
+  --ion-color-shade: var(--ion-color-sky-shade);
+  --ion-color-tint: var(--ion-color-sky-tint);
+}
 
-
+.ion-color-pinky {
+  --ion-color-base: var(--ion-color-pinky);
+  --ion-color-base-rgb: var(--ion-color-pinky-rgb);
+  --ion-color-contrast: var(--ion-color-pinky-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-pinky-contrast-rgb);
+  --ion-color-shade: var(--ion-color-pinky-shade);
+  --ion-color-tint: var(--ion-color-pinky-tint);
+}
 
 @media (prefers-color-scheme: dark) {
   /*

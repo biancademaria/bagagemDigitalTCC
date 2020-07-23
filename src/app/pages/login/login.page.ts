@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
 
   fazerLogin() {
     this.authService.login(this.email, this.password).then(res => {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/pagina-inicial']);
     }).catch(err => alert('Os dados estão incorretos ou este usuário não existe.'));
   }
 
