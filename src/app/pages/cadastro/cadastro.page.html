@@ -1,10 +1,10 @@
 <ion-content>
 
   <div class="padding">
-<br>
+    <br>
     <div class="logo">
-      <ion-icon color="light" name="person-circle"></ion-icon>
-      <!-- <img src="../../assets/logo.png"> -->
+      <!-- <ion-icon color="light" name="person-circle"></ion-icon> .-->
+      <img src="assets/iconpreto.png" alt="logopreto">
     </div>
 
     <ion-item margin-top="20px">
@@ -22,7 +22,18 @@
     <ion-item>
       <ion-icon name="mail" color="light"></ion-icon>
       <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Adicione seu E-mail" type="email" [(ngModel)]="email"></ion-input>
+      <ion-input color="light" placeholder="E-mail" type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="CPF" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="Data de Nascimento"></ion-input>
+      <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione" cancelText="Cancelar" doneText="OK"></ion-datetime>
     </ion-item>
 
     <ion-item>
@@ -30,15 +41,22 @@
       <ion-label color="light"></ion-label>
       <ion-input color="light" placeholder="Adicione sua senha" type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
+
+    <ion-item>
+      <ion-icon name="key" color="light"></ion-icon>
+      <ion-label color="light"></ion-label>
+      <ion-input color="light" placeholder="Confirme sua senha" type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+
     <br>
     <ion-button color="light" class="ion-button-class" shape="round" fill="outline" size="medium" expand="block"
       (click)="fazerCadastro()">CADASTRAR</ion-button>
-<br>
+    <br>
     <ion-col>
-      <a routerLink="/login" class="a" >Voltar para login</a>
+      <a routerLink="/login" class="a">Voltar para login</a>
     </ion-col>
-<br>
-<br>
+    <br>
+    <br>
     <ion-item lines="none">
       <ion-label color="dark" style="font-weight: bold;">Ou registre-se com</ion-label>
     </ion-item>
