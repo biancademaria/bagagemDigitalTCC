@@ -7,73 +7,123 @@
       <img src="assets/iconpreto.png" alt="logopreto">
     </div>
 
-    <ion-item margin-top="20px">
-      <ion-icon name="paper-plane" color="light"></ion-icon>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Nome de usuário" type="username" [(ngModel)]="username"></ion-input>
-    </ion-item>
+    <form [formGroup]="formCadastro">
 
-    <ion-item>
-      <ion-icon name="person" color="light"></ion-icon>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Nome completo" type="name" [(ngModel)]="name"></ion-input>
-    </ion-item>
+      <ion-item margin-top="20px">
+        <ion-icon name="paper-plane" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="usuario" color="light" placeholder="Nome de usuário" type="text"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.usuario">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('usuario').hasError(erro.tipo) && (formCadastro.get('usuario').dirty || formCadastro.get('usuario').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
 
-    <ion-item>
-      <ion-icon name="mail" color="light"></ion-icon>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="E-mail" type="email" [(ngModel)]="email"></ion-input>
-    </ion-item>
+      <ion-item margin-top="20px">
+        <ion-icon name="person" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="nome" color="light" placeholder="Nome completo" type="text"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.nome">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="CPF" type="text"></ion-input>
-    </ion-item>
+      <ion-item margin-top="20px">
+        <ion-icon name="mail" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="email" color="light" placeholder="E-mail" type="text"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.email">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
 
-    <ion-item>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Data de Nascimento"></ion-input>
-      <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione" cancelText="Cancelar" doneText="OK"></ion-datetime>
-    </ion-item>
+      <ion-item margin-top="20px">
+        <ion-icon name="caret-forward" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="cpf" color="light" placeholder="CPF" type="text"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.cpf">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('cpf').hasError(erro.tipo) && (formCadastro.get('cpf').dirty || formCadastro.get('cpf').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
 
-    <ion-item>
-      <ion-icon name="key" color="light"></ion-icon>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Adicione sua senha" type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
+      <ion-item margin-top="20px">
+        <ion-icon name="calendar" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="nascimento" color="light" placeholder="Nascimento" type="text"></ion-input>
+        <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione" cancelText="Cancelar" doneText="OK">
+        </ion-datetime>
+        <ng-container *ngFor="let erro of mensagens_validacao.nascimento">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('nascimento').hasError(erro.tipo) && (formCadastro.get('nascimento').dirty || formCadastro.get('nascimento').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
+      
+      <ion-item margin-top="20px">
+        <ion-icon name="key" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="senha" color="light" placeholder="Crie uma senha" type="password"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.senha">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('senha').hasError(erro.tipo) && (formCadastro.get('senha').dirty || formCadastro.get('senha').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
 
-    <ion-item>
-      <ion-icon name="key" color="light"></ion-icon>
-      <ion-label color="light"></ion-label>
-      <ion-input color="light" placeholder="Confirme sua senha" type="password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-
-    <br>
-    <ion-button color="light" class="ion-button-class" shape="round" fill="outline" size="medium" expand="block"
-      (click)="fazerCadastro()">CADASTRAR</ion-button>
-    <br>
-    <ion-col>
-      <a routerLink="/login" class="a">Voltar para login</a>
-    </ion-col>
-    <br>
-    <br>
-    <ion-item lines="none">
-      <ion-label color="dark" style="font-weight: bold;">Ou registre-se com</ion-label>
-    </ion-item>
-
-    <div class="flex">
-
-      <ion-button size="small" shape="round" color="sky">
-        <ion-icon slot="start" name="logo-facebook"></ion-icon>
-        Facebook
-      </ion-button>
-
-      <ion-button size="small" shape="round" color="pinky">
-        <ion-icon slot="start" name="logo-google"></ion-icon>
-        Google
-      </ion-button>
+      <ion-item margin-top="20px">
+        <ion-icon name="key" color="light" size="small"></ion-icon>
+        <ion-label color="light"></ion-label>
+        <ion-input formControlName="confirmarSenha" color="light" placeholder="Confirme sua senha" type="text"></ion-input>
+        <ng-container *ngFor="let erro of mensagens_validacao.confirmarSenha">
+          <span class="msg-erro"
+            *ngIf="formCadastro.get('confirmarSenha').hasError(erro.tipo) && (formCadastro.get('confirmarSenha').dirty || formCadastro.get('confirmarSenha').touched)">
+            {{ erro.mensagem }}
+          </span>
+        </ng-container>
+      </ion-item>
 
 
-    </div>
+      <br>
+      <ion-button color="light" class="ion-button-class" shape="round" fill="outline" size="medium" expand="block"
+        (click)="fazerCadastro()">CADASTRAR</ion-button>
+      <br>
+      <ion-col>
+        <a routerLink="/login" class="a">Voltar para login</a>
+      </ion-col>
+      <br>
+      <br>
+      <ion-item lines="none">
+        <ion-label color="dark" style="font-weight: bold;">Ou registre-se com</ion-label>
+      </ion-item>
+
+      <div class="flex">
+
+        <ion-button size="small" shape="round" color="sky">
+          <ion-icon slot="start" name="logo-facebook"></ion-icon>
+          Facebook
+        </ion-button>
+
+        <ion-button size="small" shape="round" color="pinky">
+          <ion-icon slot="start" name="logo-google"></ion-icon>
+          Google
+        </ion-button>
+
+
+      </div>
+
+    </form>
   </div>
 </ion-content>

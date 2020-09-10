@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-configuracoes',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfiguracoesPage implements OnInit {
 
-  constructor() { }
+  public formConfiguracoes: FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    public alertController: AlertController
+  ) {
+   }
+  
 
   ngOnInit() {
   }
