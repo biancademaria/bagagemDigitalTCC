@@ -27,6 +27,7 @@
     "cordova-android": "^8.1.0",
     "cordova-ios": "^5.1.1",
     "firebase": "^7.15.5",
+    "ionic2-calendar": "^0.6.6",
     "rxjs": "~6.5.1",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

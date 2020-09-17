@@ -7,6 +7,112 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="end" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+<ion-content [fullscreen]="true">
+  <div class="inicio">
+
+    <br>
+      <div class="info ion-text-center">
+        <h6>Conheça alguns destinos incríveis:</h6>
+     </div>
+  
+    <ion-slides [options]="options">
+
+    <ion-slide>
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="poster-col">
+            <img class="poster" src="https://www.almadeviajante.com/wp-content/uploads/lago-moraine-canada.jpg" alt="">
+          </ion-col>
+          <ion-col size="12">
+            <h5 class="ion-no-margin">Canadá</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="poster-col">
+            <img class="poster" src="https://assets-cdn.kangaroo.com.br/images/japao/templo-to-ji-nara-japao.jpg" alt="">
+          </ion-col>
+          <ion-col size="12">
+            <h5 class="ion-no-margin">Japão</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="poster-col">
+            <img class="poster" src="https://www.segueviagem.com.br/wp-content/uploads/2019/11/16-jerusalm-1.jpg" alt="">
+          </ion-col>
+          <ion-col size="12">
+            <h5 class="ion-no-margin">Israel</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+    <ion-card>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="poster-col">
+            <img class="poster" src="https://img.vixdata.io/pd/jpg-large/pt/sites/default/files/e/espanha-sonho-toledo-1117-1400x933.jpg" alt="">
+          </ion-col>
+          <ion-col size="12">
+            <h5 class="ion-no-margin">Espanha</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card> 
+    </ion-slide>
+
+    </ion-slides>
+
+    
+    <div class="artigo" class="info ion-text-center">
+      <h6>Quer saber mais sobre Intercâmbios? Criamos um artigo para te ajudar!</h6>
+      <ion-col size="12" class="imagem-artigo">
+        <p>
+         <img class="imagem" src="https://www.australiancentre.com.br/site/wp-content/uploads/2017/09/intercambio-pacotes.png">
+        </p>
+      </ion-col>
+    </div>
+
+
+    <ion-card>
+      <br>
+        <div class="info ion-text-center">
+          <h6>Testando conhecimentos!</h6>
+        </div>
+      <br>
+
+        <img src="assets/imgs/imgquiz.jpeg">
+
+        <div class="info ion-text-center">
+          <br>
+            <ion-card-subtitle>Temos um quiz que vai testar seu entendimento sobre os países</ion-card-subtitle>
+            <br>
+            <br>
+        </div>
+    </ion-card>
+    
+  </div>
 </ion-content>

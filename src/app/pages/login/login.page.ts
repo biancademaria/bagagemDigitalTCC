@@ -35,7 +35,7 @@ ngOnInit() {
 public fazerLogin() {
   if(this.formLogin.valid){
     console.log('Formulário Válido!');
-    this.router.navigateByUrl("/home");
+    this.router.navigateByUrl("/pagina-inicial");
   }else {
     console.log('Formulário inválido.');
   }
