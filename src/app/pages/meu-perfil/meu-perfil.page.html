@@ -11,23 +11,41 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]="true">
+  <div class="color">
+  <div class="form-container">
+    <ion-avatar class="avatar">
+      <img src="https://www.jeqist.pt/wp-content/uploads/2020/02/blank-profile-picture-973460_640.png">
+    </ion-avatar>
+  </div>
+  
+  <ion-form-container>
+    <span class="form-heading"></span>
+    <ion-list>
+      
+      <ion-title class="info ion-text-center">
+        <h3>Nome</h3>
+      </ion-title>
 
-  <ion-card>
-    <ion-item routerLink="/meu-calendario">
-      <ion-buttons>
-        <ion-button >
-          <ion-icon name="calendar-outline" position="center"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
+      <ion-card-subtitle class="info ion-text-center">
+        informação
+      </ion-card-subtitle>
+  
+      <ion-list lines="none" class="list-header">
+        <ion-item>
+          <ion-icon class="active" name="mail-outline"></ion-icon><p> email@email.com</p>
+        </ion-item>
+        <ion-item  routerLink="/meu-calendario">
+          <ion-icon class="active" name="calendar-outline"></ion-icon><p> Calendário</p>
+        </ion-item>
+        <ion-item routerLink="/configuracoes">
+          <ion-icon class="active" name="construct-outline" ></ion-icon><p> Configurações do perfil</p>
+        </ion-item>
+      </ion-list>
+    
+    </ion-list>
+  </ion-form-container>
 
-    <ion-item  routerLink="/configuracoes">
-      <ion-buttons>
-        <ion-button>
-          <ion-icon name="cog-outline" position="center"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
-  </ion-card>
+</div>
+    
 </ion-content>

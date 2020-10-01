@@ -8,10 +8,14 @@ import { MeuPerfilPageRoutingModule } from './meu-perfil-routing.module';
 
 import { MeuPerfilPage } from './meu-perfil.page';
 
+1
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     MeuPerfilPageRoutingModule
   ],
