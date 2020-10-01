@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,12 @@ public mensagens_validacao = {
   ]
 };
 
-constructor(private formBuilder: FormBuilder, private router: Router) {
+constructor(
+  private formBuilder: FormBuilder, 
+  private router: Router,
+  private toastController: ToastController,
+  
+  ) {
   this.formLogin = formBuilder.group({
     email: ['', Validators.compose([Validators.required, Validators.email])],
     senha: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
@@ -34,11 +40,29 @@ ngOnInit() {
 
 public fazerLogin() {
   if(this.formLogin.valid){
-    console.log('Formulário Válido!');
+    this.toastValido;
     this.router.navigateByUrl("/pagina-inicial");
   }else {
-    console.log('Formulário inválido.');
+    this.toastInvalido;
+    this.router.navigateByUrl("/login");
+    
   }
+}
+
+async toastValido() {
+  const toast = await this.toastController.create({
+    message: 'Login realizado com sucesso!',
+    duration: 2000
+  });
+  toast.present();
+}
+
+async toastInvalido() {
+  const toast = await this.toastController.create({
+    message: 'Seu formulário apresenta falhas. Por favor, revise-o.',
+    duration: 2000
+  });
+  toast.present();
 }
 
 }

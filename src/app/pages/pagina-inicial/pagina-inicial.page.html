@@ -1,16 +1,19 @@
 <ion-header>
   <ion-toolbar color="sky">
-    <ion-buttons slot="start" color="danger">
-      <ion-menu-button menu="first"></ion-menu-button>
-    </ion-buttons>
-
-    <ion-title>Página Inicial</ion-title>
-
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/meu-perfil">
+        <ion-icon slot="icon-only" name="person" ></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-title style="text-align: center;">
+      Mundo Afora
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="exibirAlertLogout()">
+        <ion-icon slot="icon-only" name="log-out" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
   </ion-toolbar>
 </ion-header>
 

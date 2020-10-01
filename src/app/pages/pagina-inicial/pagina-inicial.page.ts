@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-pagina-inicial',
@@ -10,16 +11,37 @@ export class PaginaInicialPage implements OnInit {
 
   public folder: string;
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute,
+    public alertController: AlertController,
+    private router: Router
+    ) { }
 
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
   }
 
   options = {
     centeredSlides: true,
     loop: true,
     spaceBetween: -14,
+  }
+
+  async exibirAlertLogout() {
+    const alert = await this.alertController.create({
+      header: 'Tem certeza?',
+      message: 'Você deseja realmente sair do aplicativo?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        }, {
+          text: 'Sim, sair',
+          handler: () => {
+            this.router.navigateByUrl('/login');
+          }
+        }
+      ]
+    });
+    await alert.present();
   }
 }
 

@@ -44,20 +44,6 @@
           </span>
         </ng-container>
       </ion-item>
-
-      <ion-item margin-top="20px">
-        <ion-icon name="calendar" color="light" size="small"></ion-icon>
-        <ion-label color="light"></ion-label>
-        <ion-input formControlName="nascimento" color="light" placeholder="Nascimento" type="text"></ion-input>
-        <ion-datetime displayFormat="DD/MM/YYYY" placeholder="Selecione" cancelText="Cancelar" doneText="OK">
-        </ion-datetime>
-        <ng-container *ngFor="let erro of mensagens_validacao.nascimento">
-          <span class="msg-erro"
-            *ngIf="formCadastro.get('nascimento').hasError(erro.tipo) && (formCadastro.get('nascimento').dirty || formCadastro.get('nascimento').touched)">
-            {{ erro.mensagem }}
-          </span>
-        </ng-container>
-      </ion-item>
       
       <ion-item margin-top="20px">
         <ion-icon name="key" color="light" size="small"></ion-icon>
@@ -74,7 +60,7 @@
       <ion-item margin-top="20px">
         <ion-icon name="key" color="light" size="small"></ion-icon>
         <ion-label color="light"></ion-label>
-        <ion-input formControlName="confirmarSenha" color="light" placeholder="Confirme sua senha" type="text"></ion-input>
+        <ion-input formControlName="confirmarSenha" color="light" placeholder="Confirme sua senha" type="password"></ion-input>
         <ng-container *ngFor="let erro of mensagens_validacao.confirmarSenha">
           <span class="msg-erro"
             *ngIf="formCadastro.get('confirmarSenha').hasError(erro.tipo) && (formCadastro.get('confirmarSenha').dirty || formCadastro.get('confirmarSenha').touched)">

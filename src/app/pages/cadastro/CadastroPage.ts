@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
     selector: 'app-cadastro',
@@ -20,15 +20,6 @@ export class CadastroPage implements OnInit {
       usuario: [
         { tipo: 'required', mensagem: 'O campo é obrigatório!' },
         { tipo: 'minlength', mensagem: 'Deve ter pelo menos 5 caracteres! ' }
-      ],
-      cpf: [
-        { tipo: 'required', mensagem: 'O campo é obrigatório!' }, //obrigatorio 
-        { tipo: 'minlength', mensagem: 'Deve ter pelo menos 11 caracteres!' }, //min 11
-        { tipo: 'maxlength', mensagem: 'Deve ter no máximo 14 caracteres!' }, //max 14
-        { tipo: 'invalido', mensagem: 'CPF Inválido!' } //cpf invalido
-      ],
-      nascimento: [
-        { tipo: 'required', mensagem: 'O campo é obrigatório!' } //obrigatorio
       ],
       email: [
         { tipo: 'required', mensagem: 'O campo é obrigatório!' }, //obrigatorio
@@ -49,7 +40,8 @@ export class CadastroPage implements OnInit {
     constructor(
       private formBuilder: FormBuilder,
       private router: Router,
-      public alertController: AlertController
+      public alertController: AlertController,
+      public toastController: ToastController
     ) {
   
   
@@ -61,15 +53,7 @@ export class CadastroPage implements OnInit {
         usuario: ['', Validators.compose([
             Validators.required,
             Validators.minLength(5)
-          ])], //Nome: [obrigatório, minímo(3)]
-        cpf: ['', Validators.compose([
-          Validators.required,
-          Validators.minLength(11),
-          Validators.maxLength(14)
-        ])],//CPF:[obrigatório, minímo(11), máximo(14)]
-        nascimento: ['', Validators.compose([
-          Validators.required
-        ])], //Data de Nascimento: [obrigatório]
+          ])],
         email: ['', Validators.compose([
           Validators.required,
           Validators.email
@@ -91,10 +75,20 @@ export class CadastroPage implements OnInit {
     public fazerCadastro() {
       if (this.formCadastro.valid) {
         console.log('Formulário Válido!');
+        this.toast();
         this.router.navigateByUrl("/login");
       } else {
         console.log('Formulário inválido.');
       }
+    }
+
+    async toast() {
+      const toast = await this.toastController.create({
+        message: 'Seus dados foram salvos! ',
+        duration: 2000
+      });
+      toast.present();
+      this.router.navigate(['/login']);
     }
 
 }

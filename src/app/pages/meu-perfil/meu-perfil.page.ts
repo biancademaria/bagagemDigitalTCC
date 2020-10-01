@@ -14,6 +14,10 @@ export class MeuPerfilPage implements OnInit {
     private router: Router
   ) { }
 
+  paginaInicial() {
+    this.router.navigate(['/pagina-inicial']);
+  }
+
   async exibirAlertLogout() {
     const alert = await this.alertController.create({
       header: 'Tem certeza?',

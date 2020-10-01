@@ -1,19 +1,33 @@
 <ion-header>
   <ion-toolbar color="sky">
-    <ion-buttons slot="start" color="danger">
-      <ion-menu-button menu="first"></ion-menu-button>
+    <ion-buttons slot="start">
+      <ion-button (click)="paginaInicial()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
     <ion-title>Meu Perfil</ion-title>
 
-    <ion-buttons slot="end">
-      <ion-button (click)="exibirAlertLogout()">
-        <ion-icon slot="icon-only" name="exit-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <ion-card>
+    <ion-item routerLink="/meu-calendario">
+      <ion-buttons>
+        <ion-button >
+          <ion-icon name="calendar-outline" position="center"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+    <ion-item  routerLink="/configuracoes">
+      <ion-buttons>
+        <ion-button>
+          <ion-icon name="cog-outline" position="center"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-card>
 </ion-content>
